@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body >
+<%- include('./partials/navbar.ejs')  %> 
+<div class="container">
+    <br>
+    <br>
+    <div class="mb-3">
+    <form action="/" method="POST">
+        <label for="title" class="form-label">Recipe Title</label>
+        <input type="text" class="form-control" name="title" id="title" placeholder="Title" required>
+      </div>
+      <div class="mb-3">
+        <label for="body" class="form-label">Recipe Instrution</label>
+        <textarea class="form-control" name="body" id="body" placeholder="Enter the instrutions here" rows="3" required></textarea>
+        <br><br>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    </div>
+</body>
+</html>

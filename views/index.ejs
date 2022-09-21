@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body >
+<%- include('./partials/navbar.ejs')  %> 
+<div class="container">
+    <br>
+    <br>
+<div class="row">
+        
+         <%recipes.forEach(recipe=>{%> 
+            <div class="col-sm-6">
+                <a href="/recipe/<%= recipe._id%> " >
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= recipe.title %> </h5>
+                      <p class="card-text"><%= recipe.body %></p>
+                     </div>
+                  </div>
+                </a>
+            </div>
+         <%})%>    
+
+       
+
+      </div>
+</div>
+
+</body>
+</html>

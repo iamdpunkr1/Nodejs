@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body >
+<%- include('./partials/navbar.ejs')  %> 
+<div class="container">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><%= recipe.title %> </h5>
+                  <p class="card-text"><%= recipe.body %></p>
+                  <a href="/" class="btn btn-danger" data-doc="<%= recipe._id%> ">Delete</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+<script>
+    const trashcan=document.querySelector('a.btn-danger');
+
+    trashcan.addEventListener('click',e=>{
+        const endpoint=`/recipe/${trashcan.dataset.doc}`;
+        fetch(endpoint,{
+            method:'DELETE'
+        }).then(response=>response.json())
+            .then(data=>window.location.href=data.redirect)
+            .catch(err=>console.log(err))
+    })
+</script>
+</body>
+</html>
